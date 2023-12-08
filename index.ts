@@ -142,8 +142,35 @@ function printName(obj: {first: string; last?: string}){
 // both accept
 // printName({first: "professor"});
 printName({first: "professor", last: "usama"});
+
 // In JavaScript, if you access a property that doesn’t exist, you’ll get the value undefined rather than a runtime error. 
 // Because of this, when you read from an optional property, you’ll have to check for undefined before using it
+
+
+
+// Union Types
+
+// TypeScript’s type system allows you to build new types out of existing ones using a large variety of operators.
+
+// Defining a Union Type
+
+// A union type is a type formed from two or more other types
+
+function namePrint(namee: number | string){
+    // console.log(namee.toUpperCase()); 
+    // error: Property 'toUpperCase' does not exist on type 'string | number'.
+        // Property 'toUpperCase' does not exist on type 'number'.
+    
+    // how can solve this 
+    if(typeof namee === 'string'){
+        console.log(namee.toUpperCase()); // now fix error
+    }
+    // if number
+    console.log(namee);
+}
+
+// namePrint(123) // ok
+// namePrint("usama") // ok
 
 
 
